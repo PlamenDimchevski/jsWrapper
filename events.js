@@ -1,4 +1,4 @@
-var jsW = (function ( jsw ) {
+var jsW = (function ( jsW ) {
 
    return jsW;
 }( jsW || {} ));
