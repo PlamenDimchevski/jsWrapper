@@ -18,6 +18,7 @@ var jsW = (function ( jsW ) {
     * @private
     *
     * @param   {[type]} el
+    * @param   {[type]} container
     *
     * @return  {[type]}    [description]
     */
@@ -26,19 +27,16 @@ var jsW = (function ( jsW ) {
       if( !(this instanceof jsW.id) ){
          return new jsW.id(el);
       }
-
-      var el_type = typeof el;
+console.log(jsW);
       container = container || document;
 
-      if ( el_type === 'string' ) {
+      if ( typeof el === 'string' ) {
          this.el = container.getElementById( el );
       } else if ( jsW.isElement(el) ) {
          this.el = el;
       } else {
          jsW.exception('Argument is of wrong type');
       }
-
-      this.css = this.el.style;
    }
 
    return jsW;
