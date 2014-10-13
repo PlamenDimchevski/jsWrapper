@@ -37,7 +37,7 @@ var jsW = (function ( jsW ) {
     * @return  {[type]}          [description]
     */
    jsW.exception = function ( message ) {
-      return throw { message : message };
+      return { message : message };
    }
 
    return jsW;

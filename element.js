@@ -23,19 +23,24 @@ var jsW = (function ( jsW ) {
     * @return  {[type]}    [description]
     */
    jsW.id = function ( el, container ) {
+      var instance = this instanceof jsW.id;
+
       // Involc "new" operator, to ease the usage
-      if( !(this instanceof jsW.id) ){
+      if( !instance ){
          return new jsW.id(el);
       }
-console.log(jsW);
+
       container = container || document;
 
       if ( typeof el === 'string' ) {
          this.el = container.getElementById( el );
       } else if ( jsW.isElement(el) ) {
          this.el = el;
+      } else if (instance) {
+         this.el = el;
       } else {
-         jsW.exception('Argument is of wrong type');
+         // not working properly, so fix it
+         throw jsW.exception('Argument is of wrong type');
       }
    }
 
